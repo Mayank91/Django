@@ -1,0 +1,15 @@
+<h1> Hello </h1>
+<ul>
+
+    <br>
+    {% for i , j  in expenses.items %}
+    {% if i == "March" %}
+     <b>{{ i }}</b> total expense is </b>{{j.total}}</b>
+    {% for l in j.expenses %}
+        {{l.spend_on}} {{l.date}}<br>
+    {% endfor %}
+    <br>
+    {% endif %}
+    {% endfor %}
+
+</ul>

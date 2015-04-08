@@ -1,7 +1,9 @@
 <html xmlns="http://www.w3.org/1999/html">
+<title>Expence Calculator</title>
 <head>
 <script src="/static/Js/jquery.min.js"></script>
 <script src="/static/Js/function.js"></script>
+
      <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -18,47 +20,46 @@
     <div class="container">
         <span><button id="btndata" class="btn btn-primary active"> March 2014 </button></span>
 
-        <span><button id="btndata1" class="btn btn-primary active"> April &2015 </button></span>
+        <span><button id="btndata1" class="btn btn-primary active"> April 2015 </button></span>
 
-        <span><button id="btndata2" class="btn btn-primary active" > Demo Data </button></span>
+        <span><button id="btndata2" class="btn btn-primary active" > May 2015 </button></span>
 
         <div class="row">
  <br>
             <div class="col-md-4" id="div1" style="background:#616BC9; color:white;margin-left:-10px;font-family: fantasy, cursive, Serif;">
                 <br>
-
-                <div id="pm">
-                <p>
                 <h3>March</h3>
+                {% for i , j  in expenses.items %}
+                {% if i == "March" %}
+                    <button id="btn1" class="btn btn-success">Total Expence  </button> <p id="pr">
+            {{j.total}}&#8377;</p></b><br>
+                    {% for l in j.expenses %}
+                 {{l.spend_on}} - {{l.date}} &nbsp;&nbsp;{{l.money}}&#8377;<br>
+                {% endfor %}
+                                          <br>
+                {% endif %}
+                {% endfor %}
 
-            {% for i in obje %}
-            {% if i.date.month == 3 %}
-                <h5>In month {{i.date}}</h5>
-                <span><li>{{i.spend_on}} =  {{i.money}}</li></span><br>
-
-            {% endif %}
-            {% endfor %}
-                <button id="btn" class="btn btn-success">Total Expence  </button>
-                <p id="pr">Total expence in {{m}} is  {{j}} Rs
-            </p>
+                    <button id="btn1a" class="btn btn-success">Add More</button>
                     </div>
-            </div>
 
-
-
+</div>
             <div class="col-md-4" id="div2" style="background:#616BC9; color:white; margin-left:5px;font-family: fantasy, cursive, Serif;">
-    <br>
+
                 <h3>April</h3>
+                {% for i , j  in expenses.items %}
+                {% if i == "April" %}
+                    <button id="btn2" class="btn btn-success">Total Expence  </button> <p id="pr1">
+            {{j.total}}&#8377;</p></b><br>
+                    {% for l in j.expenses %}
+                 {{l.spend_on}} - {{l.date}} &nbsp;&nbsp;{{l.money}}&#8377;<br>
+                {% endfor %}
+                                          <br>
+                {% endif %}
+                {% endfor %}
 
-            {% for i in obje %}
-            {% if i.date.month == 4 %}
-                <h5>In month {{i.date}}</h5>
-                <span><li>{{i.spend_on}} =  {{i.money}}</li></span><br>
+                    <button id="btn2a" class="btn btn-success">Add More</button>
 
-            {% endif %}
-            {% endfor %}
-                <button id="btn2" class="btn btn-success">Total Expence  </button>
-                <p id="pr1">Total expence in{{m}} is {{ k }}Rs
             </div>
 
 
@@ -66,22 +67,23 @@
             <div class="col-md-4" id="div3" style="background:#616BC9; color:white; margin-left:5px; font-family: fantasy, cursive, Serif;">
 <br>
 
-                <h3>Demo DATA</h3>
+                <h3>May</h3>
+                {% for i , j  in expenses.items %}
+                {% if i == "May" %}
+                    <button id="btn3" class="btn btn-success">Total Expence  </button> <p id="pr2">
+            {{j.total}}&#8377;</p></b><br>
+                    {% for l in j.expenses %}
+                 {{l.spend_on}} - {{l.date}} &nbsp;&nbsp;{{l.money}}&#8377;<br>
+                {% endfor %}
+                                          <br>
+                {% endif %}
+                {% endfor %}
 
-            {% for i in obje %}
-            {% if i.date.month == 4 %}
-                <h5>In month {{i.date}}</h5>
-                <span><li>{{i.spend_on}} =  {{i.money}}</li></span><br>
-
-            {% endif %}
-            {% endfor %}
-                <button id="btn3" class="btn btn-success">Total Expence  </button>
-                <p id="pr2">Total expence in{{m}} is {{ k }}Rs
+                    <button id="btn3a" class="btn btn-success">Add More</button>
             </div>
-            </div>
-
-
         </div>
+
+        </script>
 
     </div>
 
